@@ -6,9 +6,13 @@ import com.ltp.gradesubmission.Constants;
 import com.ltp.gradesubmission.Grade;
 import com.ltp.gradesubmission.repository.GradeRepository;
 
-public class GradeService {
+import org.springframework.beans.factory.annotation.Autowired;
 
-    GradeRepository gradeRepository = new GradeRepository();
+import org.springframework.stereotype.Service;
+@Service
+public class GradeService {
+    @Autowired
+    GradeRepository gradeRepository;
     public Grade getGrade(int index){
         return gradeRepository.getGrade(index);
     }
